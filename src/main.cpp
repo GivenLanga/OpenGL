@@ -205,7 +205,7 @@ glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
 // lighting
-glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+glm::vec3 lightPos(1.0f, 1.0f, 2.0f);
 
 int main()
 {
@@ -262,7 +262,7 @@ int main()
     lightVAO.Unbind();
     lightVBO.Unbind();
 
-    unsigned int texture;
+    unsigned int texture, texture2;
     glGenTextures(1, &texture);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -274,7 +274,7 @@ int main()
     // load and generate the texture
     int width_t, height_t, nrChannels;
     stbi_set_flip_vertically_on_load(true); // This will allow stbi and openGL to load the image in the same direction and not have it upsidedown
-    unsigned char *data = stbi_load("resources/images/container.jpg", &width_t, &height_t, &nrChannels, 0);
+    unsigned char *data = stbi_load("resources/images/container2.png", &width_t, &height_t, &nrChannels, 0);
     if (data)
     {
 
@@ -287,7 +287,28 @@ int main()
         std::cout << "Failed to load texture" << std::endl;
     }
     stbi_image_free(data);
-    unsigned int tex0uni = glGetUniformLocation(cubeShader.ID, "tex0");
+
+    glGenTextures(1, &texture2);
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, texture2);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    data = stbi_load("resources/images/container2_specular.png", &width_t, &height_t, &nrChannels, 0);
+    if (data)
+    {
+
+        GLenum format = (nrChannels == 4) ? GL_RGBA : GL_RGB;
+        glTexImage2D(GL_TEXTURE_2D, 0, format, width_t, height_t, 0, format, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else
+    {
+        std::cout << "Failed to load texture" << std::endl;
+    }
+    stbi_image_free(data);
+
     glEnable(GL_DEPTH_TEST);
 
     float rotation = 0.0f;
@@ -302,19 +323,13 @@ int main()
     int viewLoc = glGetUniformLocation(cubeShader.ID, "view");
     int projLoc = glGetUniformLocation(cubeShader.ID, "proj");
     int lightColorLoc = glGetUniformLocation(cubeShader.ID, "lightColor");
-    int cubeColorLoc = glGetUniformLocation(cubeShader.ID, "cubeColor");
-    int lightPosLoc = glGetUniformLocation(cubeShader.ID, "lightPos");
     int viewPosLoc = glGetUniformLocation(cubeShader.ID, "viewPos");
 
-    //Material Properties
-    int materialAmbientLoc = glGetUniformLocation(cubeShader.ID, "material.ambient");
-    int materialDiffuseLoc = glGetUniformLocation(cubeShader.ID, "material.diffuse");
-    int materialSpecularLoc = glGetUniformLocation(cubeShader.ID, "material.specular");
+    //Material Properties;
     int materialShinLoc = glGetUniformLocation(cubeShader.ID, "material.shininess");
-    glm::vec3 materialAmbient = glm::vec3(1.0f, 0.5, 0.31f);
-    glm::vec3 materialDiffuse = glm::vec3(1.0f, 0.5, 0.31f);
-    glm::vec3 materialSpecular = glm::vec3(0.5f, 0.5, 0.5f);
-    float  materialShininess = 32.0f;
+    float  materialShininess = 64.0f;
+    unsigned int diffuseMap = glGetUniformLocation(cubeShader.ID, "material.diffuse");
+    unsigned int specularMap = glGetUniformLocation(cubeShader.ID, "material.specular");
 
     //Light Properties
     int lightAmbientLoc = glGetUniformLocation(cubeShader.ID, "light.ambient");
@@ -365,8 +380,7 @@ int main()
         glm::mat4 view = glm::mat4(1.0f);
         glm::mat4 proj = glm::mat4(1.0f);
         glm::vec3 lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
-        glm::vec3 cubeColor = glm::vec3(1.0f, 0.5f, 0.31f);
-        model = glm::rotate(model, glm::radians(rotation), glm::vec3(0.5f, 1.0f, 0.0f));
+        model = glm::rotate(model, glm::radians(rotation), glm::vec3(0.0f, 1.0f, 0.1f));
         view = camera.getViewMatrix();
         proj = glm::perspective(glm::radians(camera.fov), (float)w_width / (float)w_height, 0.1f, 100.0f);
         lightPos.x = 1.0f + sin(glfwGetTime()) * 2.0f;
@@ -378,19 +392,19 @@ int main()
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj));
         glUniform3fv(lightColorLoc, 1, glm::value_ptr(lightColor));
-        glUniform3fv(cubeColorLoc, 1, glm::value_ptr(cubeColor));
-        glUniform3fv(viewPosLoc,1, glm::value_ptr(camera.cameraPos));
-        glUniform1i(tex0uni, 0);
-        glBindTexture(GL_TEXTURE_2D, texture);
+        glUniform3fv(viewPosLoc, 1, glm::value_ptr(camera.cameraPos));
 
+        glUniform1i(diffuseMap, 0);
+        glUniform1i(specularMap, 1);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, texture); // diffuse
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture2); // specular
 
-       // Material properties
-        glUniform3fv(materialAmbientLoc, 1, glm::value_ptr(materialAmbient));
-        glUniform3fv(materialDiffuseLoc, 1, glm::value_ptr(materialDiffuse));
-        glUniform3fv(materialSpecularLoc, 1, glm::value_ptr(materialSpecular));
+        // Material properties
         glUniform1f(materialShinLoc, materialShininess);
 
-        //Light properties
+        // Light properties
         glUniform3fv(lightAmbientLoc, 1, glm::value_ptr(lightAmbient));
         glUniform3fv(lightDiffuseLoc, 1, glm::value_ptr(lightDiffuse));
         glUniform3fv(lightSpecularLoc, 1, glm::value_ptr(lightSpecular));
@@ -403,6 +417,7 @@ int main()
         glm::mat4 modelLight = glm::mat4(1.0f);
         modelLight = glm::translate(modelLight, lightPos);    // Move to light position
         modelLight = glm::scale(modelLight, glm::vec3(0.3f)); // Small cube
+
 
         // Set uniforms AFTER activating the shader
         lightShader.Activate();
