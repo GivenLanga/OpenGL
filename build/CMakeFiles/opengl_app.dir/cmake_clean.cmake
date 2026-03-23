@@ -1,0 +1,37 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/opengl_app.dir/src/EBO.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/EBO.cpp.o.d"
+  "CMakeFiles/opengl_app.dir/src/VAO.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/VAO.cpp.o.d"
+  "CMakeFiles/opengl_app.dir/src/VBO.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/VBO.cpp.o.d"
+  "CMakeFiles/opengl_app.dir/src/cameraClass.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/cameraClass.cpp.o.d"
+  "CMakeFiles/opengl_app.dir/src/imgui/backends/imgui_impl_glfw.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/imgui/backends/imgui_impl_glfw.cpp.o.d"
+  "CMakeFiles/opengl_app.dir/src/imgui/backends/imgui_impl_opengl3.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/imgui/backends/imgui_impl_opengl3.cpp.o.d"
+  "CMakeFiles/opengl_app.dir/src/imgui/imgui.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/imgui/imgui.cpp.o.d"
+  "CMakeFiles/opengl_app.dir/src/imgui/imgui_demo.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/imgui/imgui_demo.cpp.o.d"
+  "CMakeFiles/opengl_app.dir/src/imgui/imgui_draw.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/imgui/imgui_draw.cpp.o.d"
+  "CMakeFiles/opengl_app.dir/src/imgui/imgui_tables.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/imgui/imgui_tables.cpp.o.d"
+  "CMakeFiles/opengl_app.dir/src/imgui/imgui_widgets.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/imgui/imgui_widgets.cpp.o.d"
+  "CMakeFiles/opengl_app.dir/src/main.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/main.cpp.o.d"
+  "CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o.d"
+  "CMakeFiles/opengl_app.dir/src/stb.cpp.o"
+  "CMakeFiles/opengl_app.dir/src/stb.cpp.o.d"
+  "opengl_app"
+  "opengl_app.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/opengl_app.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
