@@ -7,7 +7,7 @@ struct Material{
    float shininess;
 };
 struct Light{
-   vec3 position;
+   vec3 direction;
    vec3 ambient;
    vec3 diffuse;
    vec3 specular;
@@ -28,7 +28,9 @@ void main()
  {
    
     vec3 norm = normalize(Normal);
-    vec3 lightDir = normalize(light.position - FragPos); 
+   // vec3 lightDir = normalize(light.position - FragPos); 
+
+    vec3 lightDir = normalize(-light.direction); //directional light
 
     float diff = max(dot(norm, lightDir), 0.0);
 
