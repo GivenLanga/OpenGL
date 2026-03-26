@@ -351,12 +351,17 @@ int main()
     int lightAmbientLoc = glGetUniformLocation(cubeShader.ID, "light.ambient");
     int lightDiffuseLoc = glGetUniformLocation(cubeShader.ID, "light.diffuse");
     int lightSpecularLoc = glGetUniformLocation(cubeShader.ID, "light.specular");
-   /*  int lightPositionLoc = glGetUniformLocation(cubeShader.ID, "light.position"); */
-    int lightDirecLoc = glGetUniformLocation(cubeShader.ID, "light.direction");
+    int lightPositionLoc = glGetUniformLocation(cubeShader.ID, "light.position");
+    int lightConstantLoc = glGetUniformLocation(cubeShader.ID, "light.constant");
+    int lightLinearLoc = glGetUniformLocation(cubeShader.ID, "light.linear");
+    int lightQuadraticLoc = glGetUniformLocation(cubeShader.ID, "light.quadratic");
     glm::vec3 lightAmbient = glm::vec3(0.1f);
     glm::vec3 lightDiffuse = glm::vec3(0.6f);
     glm::vec3 lightSpecular = glm::vec3(0.5f);
-    glm::vec3 lightDirection = glm::vec3(-0.2f, -1.0f, -0.3f); 
+    float lightConstant = 1.0f;
+    float lightLinear = 0.09f;
+    float lightQuadratic = 0.032f;
+   
 
     //Light cube
     /*   lightShader.Activate(); */
@@ -428,7 +433,11 @@ int main()
         glUniform3fv(lightAmbientLoc, 1, glm::value_ptr(lightAmbient));
         glUniform3fv(lightDiffuseLoc, 1, glm::value_ptr(lightDiffuse));
         glUniform3fv(lightSpecularLoc, 1, glm::value_ptr(lightSpecular));
-        glUniform3fv(lightDirecLoc, 1, glm::value_ptr(lightDirection));
+        glUniform3fv(lightPositionLoc, 1, glm::value_ptr(lightPos));
+        glUniform1f(lightConstantLoc, lightConstant);
+        glUniform1f(lightLinearLoc, lightLinear);
+        glUniform1f(lightQuadraticLoc, lightQuadratic);
+
         VAO1.Bind();
 
         // Draw the triangle using the GL_TRIANGLES primitive
@@ -445,37 +454,37 @@ int main()
 
         }
         // Setup model matrix for light cube
-        /*  glm::mat4 modelLight = glm::mat4(1.0f);
+         glm::mat4 modelLight = glm::mat4(1.0f);
          modelLight = glm::translate(modelLight, lightPos);    // Move to light position
          modelLight = glm::scale(modelLight, glm::vec3(0.3f)); // Small cube
-  */
+  
 
         // Set uniforms AFTER activating the shader
-        /*  lightShader.Activate();
+         lightShader.Activate();
          glUniformMatrix4fv(modelLocLight, 1, GL_FALSE, glm::value_ptr(modelLight));
          glUniformMatrix4fv(viewLocLight, 1, GL_FALSE, glm::value_ptr(view));
-         glUniformMatrix4fv(projLocLight, 1, GL_FALSE, glm::value_ptr(proj)); */
+         glUniformMatrix4fv(projLocLight, 1, GL_FALSE, glm::value_ptr(proj)); 
 
         // Bind the VAO and draw
-  /*       lightVAO.Bind();
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-        lightVAO.Unbind();
- */
-        // ImGui Window
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
-        ImGui::Begin("Control Center");
-        ImGui::Text("OpenGL + ImGui working!");
-        ImGui::End();
-        ImGui::Render();
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-        //................................................
+         lightVAO.Bind();
+         glDrawArrays(GL_TRIANGLES, 0, 36);
+         lightVAO.Unbind();
 
-        // Swap the back buffer with the front buffer
-        glfwSwapBuffers(window);
-        // Take care of all GLFW events
-        glfwPollEvents();
+         // ImGui Window
+         ImGui_ImplOpenGL3_NewFrame();
+         ImGui_ImplGlfw_NewFrame();
+         ImGui::NewFrame();
+         ImGui::Begin("Control Center");
+         ImGui::Text("OpenGL + ImGui working!");
+         ImGui::End();
+         ImGui::Render();
+         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+         //................................................
+
+         // Swap the back buffer with the front buffer
+         glfwSwapBuffers(window);
+         // Take care of all GLFW events
+         glfwPollEvents();
     }
     // Delete all the objects we've created
     glDeleteTextures(1, &texture);
