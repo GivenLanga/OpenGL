@@ -355,19 +355,23 @@ int main()
     int lightConstantLoc = glGetUniformLocation(cubeShader.ID, "light.constant");
     int lightLinearLoc = glGetUniformLocation(cubeShader.ID, "light.linear");
     int lightQuadraticLoc = glGetUniformLocation(cubeShader.ID, "light.quadratic");
+    int lightDirectionLoc =  glGetUniformLocation(cubeShader.ID, "light.direction");
+    int lightRadiusLoc = glGetUniformLocation(cubeShader.ID, "light.radius");
+    int lightOuterRadiusLoc = glGetUniformLocation(cubeShader.ID, "light.outerRadius");
     glm::vec3 lightAmbient = glm::vec3(0.1f);
     glm::vec3 lightDiffuse = glm::vec3(0.6f);
     glm::vec3 lightSpecular = glm::vec3(0.5f);
     float lightConstant = 1.0f;
     float lightLinear = 0.09f;
     float lightQuadratic = 0.032f;
-   
+    float lightRadius = glm::cos(glm::radians(12.5f));
+      float lightOuterRadius = glm::cos(glm::radians(17.5f));
 
     //Light cube
     /*   lightShader.Activate(); */
-    int modelLocLight = glGetUniformLocation(lightShader.ID, "model");
+   /*  int modelLocLight = glGetUniformLocation(lightShader.ID, "model");
     int viewLocLight = glGetUniformLocation(lightShader.ID, "view");
-    int projLocLight = glGetUniformLocation(lightShader.ID, "proj");
+    int projLocLight = glGetUniformLocation(lightShader.ID, "proj"); */
 
     bool cursorEnabled = true;
     bool tabPressedLastFrame = false;
@@ -433,10 +437,14 @@ int main()
         glUniform3fv(lightAmbientLoc, 1, glm::value_ptr(lightAmbient));
         glUniform3fv(lightDiffuseLoc, 1, glm::value_ptr(lightDiffuse));
         glUniform3fv(lightSpecularLoc, 1, glm::value_ptr(lightSpecular));
-        glUniform3fv(lightPositionLoc, 1, glm::value_ptr(lightPos));
+        glUniform3fv(lightPositionLoc, 1, glm::value_ptr(camera.cameraPos));
+        glUniform3fv(lightDirectionLoc, 1, glm::value_ptr(camera.cameraFront));
         glUniform1f(lightConstantLoc, lightConstant);
         glUniform1f(lightLinearLoc, lightLinear);
         glUniform1f(lightQuadraticLoc, lightQuadratic);
+        glUniform1f(lightRadiusLoc, lightRadius);
+        glUniform1f(lightOuterRadiusLoc, lightOuterRadius);
+
 
         VAO1.Bind();
 
@@ -454,16 +462,16 @@ int main()
 
         }
         // Setup model matrix for light cube
-         glm::mat4 modelLight = glm::mat4(1.0f);
+      /*    glm::mat4 modelLight = glm::mat4(1.0f);
          modelLight = glm::translate(modelLight, lightPos);    // Move to light position
          modelLight = glm::scale(modelLight, glm::vec3(0.3f)); // Small cube
   
-
+ */
         // Set uniforms AFTER activating the shader
-         lightShader.Activate();
+       /*   lightShader.Activate();
          glUniformMatrix4fv(modelLocLight, 1, GL_FALSE, glm::value_ptr(modelLight));
          glUniformMatrix4fv(viewLocLight, 1, GL_FALSE, glm::value_ptr(view));
-         glUniformMatrix4fv(projLocLight, 1, GL_FALSE, glm::value_ptr(proj)); 
+         glUniformMatrix4fv(projLocLight, 1, GL_FALSE, glm::value_ptr(proj));  */
 
         // Bind the VAO and draw
          lightVAO.Bind();
