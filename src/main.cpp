@@ -6,6 +6,7 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <cmath>
+#include <vector>
 
 #include "shaderClass.h"
 #include "VAO.h"
@@ -207,19 +208,24 @@ glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 // lighting
 glm::vec3 lightPos(1.0f, 1.0f, 2.0f);
 
- // positions all containers
-    glm::vec3 cubePositions[] = {
-        glm::vec3( 0.0f,  0.0f,  0.0f),
-        glm::vec3( 2.0f,  5.0f, -15.0f),
-        glm::vec3(-1.5f, -2.2f, -2.5f),
-        glm::vec3(-3.8f, -2.0f, -12.3f),
-        glm::vec3( 2.4f, -0.4f, -3.5f),
-        glm::vec3(-1.7f,  3.0f, -7.5f),
-        glm::vec3( 1.3f, -2.0f, -2.5f),
-        glm::vec3( 1.5f,  2.0f, -2.5f),
-        glm::vec3( 1.5f,  0.2f, -1.5f),
-        glm::vec3(-1.3f,  1.0f, -1.5f)
-    };
+// positions all containers
+glm::vec3 cubePositions[] = {
+    glm::vec3(0.0f, 0.0f, 0.0f),
+    glm::vec3(2.0f, 5.0f, -15.0f),
+    glm::vec3(-1.5f, -2.2f, -2.5f),
+    glm::vec3(-3.8f, -2.0f, -12.3f),
+    glm::vec3(2.4f, -0.4f, -3.5f),
+    glm::vec3(-1.7f, 3.0f, -7.5f),
+    glm::vec3(1.3f, -2.0f, -2.5f),
+    glm::vec3(1.5f, 2.0f, -2.5f),
+    glm::vec3(1.5f, 0.2f, -1.5f),
+    glm::vec3(-1.3f, 1.0f, -1.5f)};
+// positions of the point lights
+glm::vec3 pointLightPositions[] = {
+    glm::vec3(0.7f, 0.2f, 2.0f),
+    glm::vec3(2.3f, -3.3f, -4.0f),
+    glm::vec3(-4.0f, 2.0f, -12.0f),
+    glm::vec3(0.0f, 0.0f, -3.0f)};
 
 int main()
 {
@@ -258,7 +264,7 @@ int main()
     ImGui_ImplOpenGL3_Init("#version 330");
     //..............................................
 
-    Shader cubeShader("resources/shaders/default.vert", "resources/shaders/default.frag");
+    Shader cubeShader("resources/shaders/default.vs", "resources/shaders/default.fs");
     VAO VAO1;
     VAO1.Bind();
     VBO VBO1(vertices, sizeof(vertices));
@@ -268,7 +274,7 @@ int main()
     VAO1.Unbind();
     VBO1.Unbind();
 
-    Shader lightShader("resources/shaders/lightCube.vert", "resources/shaders/lightCube.frag");
+    Shader lightShader("resources/shaders/lightCube.vs", "resources/shaders/lightCube.fs");
     VAO lightVAO;
     lightVAO.Bind();
     VBO lightVBO(lightVertices, sizeof(lightVertices));
@@ -332,7 +338,7 @@ int main()
     camera.lastX = w_width / 2;
     camera.lastY = w_height / 2;
 
-   /*  cubeShader.Activate(); */
+    cubeShader.Activate();
     int modelLoc = glGetUniformLocation(cubeShader.ID, "model");
     int viewLoc = glGetUniformLocation(cubeShader.ID, "view");
     int projLoc = glGetUniformLocation(cubeShader.ID, "proj");
@@ -345,33 +351,65 @@ int main()
     unsigned int diffuseMap = glGetUniformLocation(cubeShader.ID, "material.diffuse");
     unsigned int specularMap = glGetUniformLocation(cubeShader.ID, "material.specular");
 
+    //Directional light
+    int lightDirectionLoc_d = glGetUniformLocation(cubeShader.ID, "dirLight.direction");
+    int lightAmbientLoc_d = glGetUniformLocation(cubeShader.ID, "dirLight.ambient");
+    int lightDiffuseLoc_d = glGetUniformLocation(cubeShader.ID, "dirLight.diffuse");
+    int lightSpecularLoc_d = glGetUniformLocation(cubeShader.ID, "dirLight.specular");
+    glm::vec3 lightDirection_d = glm::vec3(-0.2f, -1.0f, -0.3f);
+    glm::vec3 lightAmbient_d = glm::vec3(0.1f);
+    glm::vec3 lightDiffuse_d = glm::vec3(0.6f);
+    glm::vec3 lightSpecular_d = glm::vec3(0.5f);
+    
+    // Share'd by all point lights
+    float lightConstant_p = 1.0f;
+    float lightLinear_p = 0.09f;
+    float lightQuadratic_p = 0.032f;
+    glm::vec3 lightAmbient_p = glm::vec3(0.05f);
+    glm::vec3 lightDiffuse_p = glm::vec3(0.8f);
+    glm::vec3 lightSpecular_p = glm::vec3(1.0f);
 
+    //Point Lights 
+    std::vector <int> lightPositionLoc_p(4), lightAmbientLoc_p(4), lightDiffuseLoc_p(4), lightSpecularLoc_p(4);
+    std::vector <int> lightConstantLoc_p(4), lightLinearLoc_p(4), lightQuadraticLoc_p(4);
 
-    //Light Properties
-    int lightAmbientLoc = glGetUniformLocation(cubeShader.ID, "light.ambient");
-    int lightDiffuseLoc = glGetUniformLocation(cubeShader.ID, "light.diffuse");
-    int lightSpecularLoc = glGetUniformLocation(cubeShader.ID, "light.specular");
-    int lightPositionLoc = glGetUniformLocation(cubeShader.ID, "light.position");
-    int lightConstantLoc = glGetUniformLocation(cubeShader.ID, "light.constant");
-    int lightLinearLoc = glGetUniformLocation(cubeShader.ID, "light.linear");
-    int lightQuadraticLoc = glGetUniformLocation(cubeShader.ID, "light.quadratic");
-    int lightDirectionLoc =  glGetUniformLocation(cubeShader.ID, "light.direction");
-    int lightRadiusLoc = glGetUniformLocation(cubeShader.ID, "light.radius");
-    int lightOuterRadiusLoc = glGetUniformLocation(cubeShader.ID, "light.outerRadius");
-    glm::vec3 lightAmbient = glm::vec3(0.1f);
-    glm::vec3 lightDiffuse = glm::vec3(0.6f);
-    glm::vec3 lightSpecular = glm::vec3(0.5f);
-    float lightConstant = 1.0f;
-    float lightLinear = 0.09f;
-    float lightQuadratic = 0.032f;
-    float lightRadius = glm::cos(glm::radians(12.5f));
-      float lightOuterRadius = glm::cos(glm::radians(17.5f));
+    for (int i = 0; i < 4; i++){
+
+        std::string idx = std::to_string(i);
+
+        lightPositionLoc_p[i] = glGetUniformLocation(cubeShader.ID, ("pointLights[" + idx + "].position").c_str());
+        lightAmbientLoc_p[i] = glGetUniformLocation(cubeShader.ID, ("pointLights[" + idx + "].ambient").c_str());
+        lightDiffuseLoc_p[i] = glGetUniformLocation(cubeShader.ID, ("pointLights[" + idx + "].diffuse").c_str());
+        lightSpecularLoc_p[i] = glGetUniformLocation(cubeShader.ID, ("pointLights[" + idx + "].specular").c_str());
+
+        lightConstantLoc_p[i] = glGetUniformLocation(cubeShader.ID, ("pointLights[" + idx + "].constant").c_str());
+        lightLinearLoc_p[i] = glGetUniformLocation(cubeShader.ID, ("pointLights[" + idx + "].linear").c_str());
+        lightQuadraticLoc_p[i] = glGetUniformLocation(cubeShader.ID, ("pointLights[" + idx + "].quadratic").c_str());
+    }
+
+    //SpotLight
+    int lightPositionLoc_s = glGetUniformLocation(cubeShader.ID, "spotLight.position");
+    int lightDirectionLoc_s = glGetUniformLocation(cubeShader.ID, "spotLight.direction");
+    int lightAmbientLoc_s = glGetUniformLocation(cubeShader.ID, "spotLight.ambient");
+    int lightDiffuseLoc_s = glGetUniformLocation(cubeShader.ID, "spotLight.diffuse");
+    int lightConstantLoc_s = glGetUniformLocation(cubeShader.ID, "spotLight.constant");
+    int lightLinearLoc_s = glGetUniformLocation(cubeShader.ID, "spotLight.linear");
+    int lightQuadraticLoc_s = glGetUniformLocation(cubeShader.ID, "spotLight.quadratic");
+    int lightSpecularLoc_s = glGetUniformLocation(cubeShader.ID, "spotLight.specular");
+    int lightRadiusLoc_s = glGetUniformLocation(cubeShader.ID, "spotLight.radius");
+    int lightOuterRadiusLoc_s = glGetUniformLocation(cubeShader.ID, "spotLight.outerRadius");
+    glm::vec3 lightAmbient_s = glm::vec3(0.0f);
+    glm::vec3 lightDiffuse_s = glm::vec3(1.0f);
+    glm::vec3 lightSpecular_s = glm::vec3(1.0f);
+    float lightRadius_s = glm::cos(glm::radians(12.5f));
+    float lightOuterRadius_s = glm::cos(glm::radians(17.5f));
+
 
     //Light cube
-    /*   lightShader.Activate(); */
-   /*  int modelLocLight = glGetUniformLocation(lightShader.ID, "model");
+    lightShader.Activate(); 
+    int modelLocLight = glGetUniformLocation(lightShader.ID, "model");
     int viewLocLight = glGetUniformLocation(lightShader.ID, "view");
-    int projLocLight = glGetUniformLocation(lightShader.ID, "proj"); */
+    int projLocLight = glGetUniformLocation(lightShader.ID, "proj");
 
     bool cursorEnabled = true;
     bool tabPressedLastFrame = false;
@@ -433,24 +471,40 @@ int main()
         // Material properties
         glUniform1f(materialShinLoc, materialShininess);
 
-        // Light properties
-        glUniform3fv(lightAmbientLoc, 1, glm::value_ptr(lightAmbient));
-        glUniform3fv(lightDiffuseLoc, 1, glm::value_ptr(lightDiffuse));
-        glUniform3fv(lightSpecularLoc, 1, glm::value_ptr(lightSpecular));
-        glUniform3fv(lightPositionLoc, 1, glm::value_ptr(camera.cameraPos));
-        glUniform3fv(lightDirectionLoc, 1, glm::value_ptr(camera.cameraFront));
-        glUniform1f(lightConstantLoc, lightConstant);
-        glUniform1f(lightLinearLoc, lightLinear);
-        glUniform1f(lightQuadraticLoc, lightQuadratic);
-        glUniform1f(lightRadiusLoc, lightRadius);
-        glUniform1f(lightOuterRadiusLoc, lightOuterRadius);
+        // Directional Light properties
+        glUniform3fv(lightDirectionLoc_d,1, glm::value_ptr(lightDirection_d));
+        glUniform3fv(lightAmbientLoc_d, 1, glm::value_ptr(lightAmbient_d));
+        glUniform3fv(lightDiffuseLoc_d, 1, glm::value_ptr(lightDiffuse_d));
+        glUniform3fv(lightSpecularLoc_d, 1, glm::value_ptr(lightSpecular_d));
+
+        //Point lights
+
+        for(int i = 0; i < 4; i ++ ){
+
+            glUniform3fv(lightPositionLoc_p[i], 1, glm::value_ptr(pointLightPositions[i]));
+            glUniform3fv(lightAmbientLoc_p[i], 1, glm::value_ptr(lightAmbient_p));
+            glUniform3fv(lightDiffuseLoc_p[i], 1, glm::value_ptr(lightDiffuse_p));
+            glUniform3fv(lightSpecularLoc_p[i], 1, glm::value_ptr(lightSpecular_p));
+
+            glUniform1f(lightConstantLoc_p[i], lightConstant_p);
+            glUniform1f(lightLinearLoc_p[i], lightLinear_p);
+            glUniform1f(lightQuadraticLoc_p[i], lightQuadratic_p);
+        }
+          
+        //Spot Lights
+        glUniform3fv(lightPositionLoc_s, 1, glm::value_ptr(camera.cameraPos));
+        glUniform3fv(lightDirectionLoc_s, 1, glm::value_ptr(camera.cameraFront));
+        glUniform3fv(lightAmbientLoc_s, 1, glm::value_ptr(lightAmbient_s));
+        glUniform3fv(lightDiffuseLoc_s, 1, glm::value_ptr(lightDiffuse_s));
+        glUniform3fv(lightSpecularLoc_s, 1, glm::value_ptr(lightSpecular_s));
+        glUniform1f(lightConstantLoc_s, lightConstant_p);
+        glUniform1f(lightLinearLoc_s, lightLinear_p);
+        glUniform1f(lightQuadraticLoc_s, lightQuadratic_p);
+        glUniform1f(lightRadiusLoc_s, lightRadius_s);
+        glUniform1f(lightOuterRadiusLoc_s, lightOuterRadius_s);
 
 
         VAO1.Bind();
-
-        // Draw the triangle using the GL_TRIANGLES primitive
-        // glDrawArrays(GL_TRIANGLES, 0, 36);
-
 
         for(unsigned int i =0; i< 10; i++){
             glm::mat4 model = glm::mat4(1.0f);
@@ -459,40 +513,45 @@ int main()
             model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
             glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
             glDrawArrays(GL_TRIANGLES, 0, 36);
-
         }
+
         // Setup model matrix for light cube
-      /*    glm::mat4 modelLight = glm::mat4(1.0f);
-         modelLight = glm::translate(modelLight, lightPos);    // Move to light position
-         modelLight = glm::scale(modelLight, glm::vec3(0.3f)); // Small cube
-  
- */
+
         // Set uniforms AFTER activating the shader
-       /*   lightShader.Activate();
-         glUniformMatrix4fv(modelLocLight, 1, GL_FALSE, glm::value_ptr(modelLight));
-         glUniformMatrix4fv(viewLocLight, 1, GL_FALSE, glm::value_ptr(view));
-         glUniformMatrix4fv(projLocLight, 1, GL_FALSE, glm::value_ptr(proj));  */
+        lightShader.Activate();
+
+        glUniformMatrix4fv(viewLocLight, 1, GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(projLocLight, 1, GL_FALSE, glm::value_ptr(proj));
 
         // Bind the VAO and draw
-         lightVAO.Bind();
-         glDrawArrays(GL_TRIANGLES, 0, 36);
-         lightVAO.Unbind();
+        lightVAO.Bind();
 
-         // ImGui Window
-         ImGui_ImplOpenGL3_NewFrame();
-         ImGui_ImplGlfw_NewFrame();
-         ImGui::NewFrame();
-         ImGui::Begin("Control Center");
-         ImGui::Text("OpenGL + ImGui working!");
-         ImGui::End();
-         ImGui::Render();
-         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-         //................................................
+        for (unsigned int i = 0; i < 4; i++)
+        {
+            glm::mat4 modelLight = glm::mat4(1.0f);
+            modelLight = glm::translate(modelLight, pointLightPositions[i]); 
+            modelLight = glm::scale(modelLight, glm::vec3(0.2f)); // Small cube
+            glUniformMatrix4fv(modelLocLight, 1, GL_FALSE, glm::value_ptr(modelLight));
 
-         // Swap the back buffer with the front buffer
-         glfwSwapBuffers(window);
-         // Take care of all GLFW events
-         glfwPollEvents();
+            glDrawArrays(GL_TRIANGLES, 0, 36);
+        }
+        lightVAO.Unbind();
+
+        // ImGui Window
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
+        ImGui::Begin("Control Center");
+        ImGui::Text("OpenGL + ImGui working!");
+        ImGui::End();
+        ImGui::Render();
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+        //................................................
+
+        // Swap the back buffer with the front buffer
+        glfwSwapBuffers(window);
+        // Take care of all GLFW events
+        glfwPollEvents();
     }
     // Delete all the objects we've created
     glDeleteTextures(1, &texture);
