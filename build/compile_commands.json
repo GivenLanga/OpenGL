@@ -1,0 +1,146 @@
+[
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/cc  -I/home/creepydoll/Desktop/LearnOpenGL/glad/include  -o CMakeFiles/glad.dir/glad/src/glad.c.o -c /home/creepydoll/Desktop/LearnOpenGL/glad/src/glad.c",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/glad/src/glad.c",
+  "output": "CMakeFiles/glad.dir/glad/src/glad.c.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -std=gnu++17 -o CMakeFiles/imgui.dir/src/imgui/imgui.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui.cpp",
+  "output": "CMakeFiles/imgui.dir/src/imgui/imgui.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -std=gnu++17 -o CMakeFiles/imgui.dir/src/imgui/imgui_draw.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_draw.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_draw.cpp",
+  "output": "CMakeFiles/imgui.dir/src/imgui/imgui_draw.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -std=gnu++17 -o CMakeFiles/imgui.dir/src/imgui/imgui_tables.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_tables.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_tables.cpp",
+  "output": "CMakeFiles/imgui.dir/src/imgui/imgui_tables.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -std=gnu++17 -o CMakeFiles/imgui.dir/src/imgui/imgui_widgets.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_widgets.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_widgets.cpp",
+  "output": "CMakeFiles/imgui.dir/src/imgui/imgui_widgets.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -std=gnu++17 -o CMakeFiles/imgui.dir/src/imgui/imgui_demo.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_demo.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_demo.cpp",
+  "output": "CMakeFiles/imgui.dir/src/imgui/imgui_demo.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -std=gnu++17 -o CMakeFiles/imgui.dir/src/imgui/backends/imgui_impl_glfw.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends/imgui_impl_glfw.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends/imgui_impl_glfw.cpp",
+  "output": "CMakeFiles/imgui.dir/src/imgui/backends/imgui_impl_glfw.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -std=gnu++17 -o CMakeFiles/imgui.dir/src/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends/imgui_impl_opengl3.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends/imgui_impl_opengl3.cpp",
+  "output": "CMakeFiles/imgui.dir/src/imgui/backends/imgui_impl_opengl3.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/EBO.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/EBO.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/EBO.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/EBO.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/VAO.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/VAO.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/VAO.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/VAO.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/VBO.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/VBO.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/VBO.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/VBO.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/cameraClass.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/cameraClass.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/cameraClass.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/cameraClass.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/imgui/backends/imgui_impl_glfw.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends/imgui_impl_glfw.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends/imgui_impl_glfw.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/imgui/backends/imgui_impl_glfw.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends/imgui_impl_opengl3.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends/imgui_impl_opengl3.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/imgui/backends/imgui_impl_opengl3.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/imgui/imgui.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/imgui/imgui.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/imgui/imgui_demo.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_demo.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_demo.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/imgui/imgui_demo.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/imgui/imgui_draw.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_draw.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_draw.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/imgui/imgui_draw.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/imgui/imgui_tables.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_tables.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_tables.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/imgui/imgui_tables.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/imgui/imgui_widgets.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_widgets.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_widgets.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/imgui/imgui_widgets.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/main.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/main.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/main.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/meshClass.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/meshClass.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/meshClass.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/meshClass.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/modelClass.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/modelClass.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/modelClass.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/modelClass.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/shaderClass.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/shaderClass.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o"
+},
+{
+  "directory": "/home/creepydoll/Desktop/LearnOpenGL/build",
+  "command": "/usr/bin/c++  -I/home/creepydoll/Desktop/LearnOpenGL/headers -I/home/creepydoll/Desktop/LearnOpenGL/headers/imgui -I/home/creepydoll/Desktop/LearnOpenGL/src/imgui/backends -I/home/creepydoll/Desktop/LearnOpenGL/glad/include -std=gnu++17 -o CMakeFiles/opengl_app.dir/src/stb.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/stb.cpp",
+  "file": "/home/creepydoll/Desktop/LearnOpenGL/src/stb.cpp",
+  "output": "CMakeFiles/opengl_app.dir/src/stb.cpp.o"
+}
+]

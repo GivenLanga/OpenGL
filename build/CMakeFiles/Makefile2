@@ -138,12 +138,12 @@ CMakeFiles/opengl_app.dir/all: CMakeFiles/glad.dir/all
 CMakeFiles/opengl_app.dir/all: CMakeFiles/imgui.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_app.dir/build.make CMakeFiles/opengl_app.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_app.dir/build.make CMakeFiles/opengl_app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/creepydoll/Desktop/LearnOpenGL/build/CMakeFiles --progress-num=11,12,13,14,15,16,17,18,19,20,21,22,23,24,25 "Built target opengl_app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/creepydoll/Desktop/LearnOpenGL/build/CMakeFiles --progress-num=11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 "Built target opengl_app"
 .PHONY : CMakeFiles/opengl_app.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/opengl_app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/creepydoll/Desktop/LearnOpenGL/build/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/creepydoll/Desktop/LearnOpenGL/build/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/opengl_app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/creepydoll/Desktop/LearnOpenGL/build/CMakeFiles 0
 .PHONY : CMakeFiles/opengl_app.dir/rule

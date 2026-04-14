@@ -237,10 +237,38 @@ CMakeFiles/opengl_app.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/opengl_app.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/creepydoll/Desktop/LearnOpenGL/src/main.cpp -o CMakeFiles/opengl_app.dir/src/main.cpp.s
 
+CMakeFiles/opengl_app.dir/src/meshClass.cpp.o: CMakeFiles/opengl_app.dir/flags.make
+CMakeFiles/opengl_app.dir/src/meshClass.cpp.o: /home/creepydoll/Desktop/LearnOpenGL/src/meshClass.cpp
+CMakeFiles/opengl_app.dir/src/meshClass.cpp.o: CMakeFiles/opengl_app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/creepydoll/Desktop/LearnOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/opengl_app.dir/src/meshClass.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/opengl_app.dir/src/meshClass.cpp.o -MF CMakeFiles/opengl_app.dir/src/meshClass.cpp.o.d -o CMakeFiles/opengl_app.dir/src/meshClass.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/meshClass.cpp
+
+CMakeFiles/opengl_app.dir/src/meshClass.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/opengl_app.dir/src/meshClass.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/creepydoll/Desktop/LearnOpenGL/src/meshClass.cpp > CMakeFiles/opengl_app.dir/src/meshClass.cpp.i
+
+CMakeFiles/opengl_app.dir/src/meshClass.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/opengl_app.dir/src/meshClass.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/creepydoll/Desktop/LearnOpenGL/src/meshClass.cpp -o CMakeFiles/opengl_app.dir/src/meshClass.cpp.s
+
+CMakeFiles/opengl_app.dir/src/modelClass.cpp.o: CMakeFiles/opengl_app.dir/flags.make
+CMakeFiles/opengl_app.dir/src/modelClass.cpp.o: /home/creepydoll/Desktop/LearnOpenGL/src/modelClass.cpp
+CMakeFiles/opengl_app.dir/src/modelClass.cpp.o: CMakeFiles/opengl_app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/creepydoll/Desktop/LearnOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/opengl_app.dir/src/modelClass.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/opengl_app.dir/src/modelClass.cpp.o -MF CMakeFiles/opengl_app.dir/src/modelClass.cpp.o.d -o CMakeFiles/opengl_app.dir/src/modelClass.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/modelClass.cpp
+
+CMakeFiles/opengl_app.dir/src/modelClass.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/opengl_app.dir/src/modelClass.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/creepydoll/Desktop/LearnOpenGL/src/modelClass.cpp > CMakeFiles/opengl_app.dir/src/modelClass.cpp.i
+
+CMakeFiles/opengl_app.dir/src/modelClass.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/opengl_app.dir/src/modelClass.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/creepydoll/Desktop/LearnOpenGL/src/modelClass.cpp -o CMakeFiles/opengl_app.dir/src/modelClass.cpp.s
+
 CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o: CMakeFiles/opengl_app.dir/flags.make
 CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o: /home/creepydoll/Desktop/LearnOpenGL/src/shaderClass.cpp
 CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o: CMakeFiles/opengl_app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/creepydoll/Desktop/LearnOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/creepydoll/Desktop/LearnOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o -MF CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o.d -o CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/shaderClass.cpp
 
 CMakeFiles/opengl_app.dir/src/shaderClass.cpp.i: cmake_force
@@ -254,7 +282,7 @@ CMakeFiles/opengl_app.dir/src/shaderClass.cpp.s: cmake_force
 CMakeFiles/opengl_app.dir/src/stb.cpp.o: CMakeFiles/opengl_app.dir/flags.make
 CMakeFiles/opengl_app.dir/src/stb.cpp.o: /home/creepydoll/Desktop/LearnOpenGL/src/stb.cpp
 CMakeFiles/opengl_app.dir/src/stb.cpp.o: CMakeFiles/opengl_app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/creepydoll/Desktop/LearnOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/opengl_app.dir/src/stb.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/creepydoll/Desktop/LearnOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/opengl_app.dir/src/stb.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/opengl_app.dir/src/stb.cpp.o -MF CMakeFiles/opengl_app.dir/src/stb.cpp.o.d -o CMakeFiles/opengl_app.dir/src/stb.cpp.o -c /home/creepydoll/Desktop/LearnOpenGL/src/stb.cpp
 
 CMakeFiles/opengl_app.dir/src/stb.cpp.i: cmake_force
@@ -279,6 +307,8 @@ opengl_app_OBJECTS = \
 "CMakeFiles/opengl_app.dir/src/imgui/imgui_tables.cpp.o" \
 "CMakeFiles/opengl_app.dir/src/imgui/imgui_widgets.cpp.o" \
 "CMakeFiles/opengl_app.dir/src/main.cpp.o" \
+"CMakeFiles/opengl_app.dir/src/meshClass.cpp.o" \
+"CMakeFiles/opengl_app.dir/src/modelClass.cpp.o" \
 "CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o" \
 "CMakeFiles/opengl_app.dir/src/stb.cpp.o"
 
@@ -297,13 +327,15 @@ opengl_app: CMakeFiles/opengl_app.dir/src/imgui/imgui_draw.cpp.o
 opengl_app: CMakeFiles/opengl_app.dir/src/imgui/imgui_tables.cpp.o
 opengl_app: CMakeFiles/opengl_app.dir/src/imgui/imgui_widgets.cpp.o
 opengl_app: CMakeFiles/opengl_app.dir/src/main.cpp.o
+opengl_app: CMakeFiles/opengl_app.dir/src/meshClass.cpp.o
+opengl_app: CMakeFiles/opengl_app.dir/src/modelClass.cpp.o
 opengl_app: CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o
 opengl_app: CMakeFiles/opengl_app.dir/src/stb.cpp.o
 opengl_app: CMakeFiles/opengl_app.dir/build.make
 opengl_app: libglad.a
 opengl_app: libimgui.a
 opengl_app: CMakeFiles/opengl_app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/creepydoll/Desktop/LearnOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable opengl_app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/creepydoll/Desktop/LearnOpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable opengl_app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/opengl_app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

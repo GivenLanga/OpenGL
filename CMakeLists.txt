@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(LearnOpenGL)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # -------- Automatically collect files --------
 
@@ -41,7 +42,7 @@ target_include_directories(imgui PUBLIC
 )
 
 # -------- Executable --------
-
+find_package(assimp REQUIRED)
 add_executable(opengl_app
     ${SRC_FILES}
     ${HEADER_FILES}
@@ -61,6 +62,7 @@ target_link_libraries(opengl_app
     glfw
     GL
     imgui
+    assimp
 )
 
 # -------- Copy shaders automatically --------

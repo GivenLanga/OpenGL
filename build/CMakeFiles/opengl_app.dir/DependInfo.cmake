@@ -20,6 +20,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_tables.cpp" "CMakeFiles/opengl_app.dir/src/imgui/imgui_tables.cpp.o" "gcc" "CMakeFiles/opengl_app.dir/src/imgui/imgui_tables.cpp.o.d"
   "/home/creepydoll/Desktop/LearnOpenGL/src/imgui/imgui_widgets.cpp" "CMakeFiles/opengl_app.dir/src/imgui/imgui_widgets.cpp.o" "gcc" "CMakeFiles/opengl_app.dir/src/imgui/imgui_widgets.cpp.o.d"
   "/home/creepydoll/Desktop/LearnOpenGL/src/main.cpp" "CMakeFiles/opengl_app.dir/src/main.cpp.o" "gcc" "CMakeFiles/opengl_app.dir/src/main.cpp.o.d"
+  "/home/creepydoll/Desktop/LearnOpenGL/src/meshClass.cpp" "CMakeFiles/opengl_app.dir/src/meshClass.cpp.o" "gcc" "CMakeFiles/opengl_app.dir/src/meshClass.cpp.o.d"
+  "/home/creepydoll/Desktop/LearnOpenGL/src/modelClass.cpp" "CMakeFiles/opengl_app.dir/src/modelClass.cpp.o" "gcc" "CMakeFiles/opengl_app.dir/src/modelClass.cpp.o.d"
   "/home/creepydoll/Desktop/LearnOpenGL/src/shaderClass.cpp" "CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o" "gcc" "CMakeFiles/opengl_app.dir/src/shaderClass.cpp.o.d"
   "/home/creepydoll/Desktop/LearnOpenGL/src/stb.cpp" "CMakeFiles/opengl_app.dir/src/stb.cpp.o" "gcc" "CMakeFiles/opengl_app.dir/src/stb.cpp.o.d"
   )

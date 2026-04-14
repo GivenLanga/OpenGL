@@ -488,6 +488,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_app.dir/build.make CMakeFiles/opengl_app.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/meshClass.o: src/meshClass.cpp.o
+.PHONY : src/meshClass.o
+
+# target to build an object file
+src/meshClass.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_app.dir/build.make CMakeFiles/opengl_app.dir/src/meshClass.cpp.o
+.PHONY : src/meshClass.cpp.o
+
+src/meshClass.i: src/meshClass.cpp.i
+.PHONY : src/meshClass.i
+
+# target to preprocess a source file
+src/meshClass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_app.dir/build.make CMakeFiles/opengl_app.dir/src/meshClass.cpp.i
+.PHONY : src/meshClass.cpp.i
+
+src/meshClass.s: src/meshClass.cpp.s
+.PHONY : src/meshClass.s
+
+# target to generate assembly for a file
+src/meshClass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_app.dir/build.make CMakeFiles/opengl_app.dir/src/meshClass.cpp.s
+.PHONY : src/meshClass.cpp.s
+
+src/modelClass.o: src/modelClass.cpp.o
+.PHONY : src/modelClass.o
+
+# target to build an object file
+src/modelClass.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_app.dir/build.make CMakeFiles/opengl_app.dir/src/modelClass.cpp.o
+.PHONY : src/modelClass.cpp.o
+
+src/modelClass.i: src/modelClass.cpp.i
+.PHONY : src/modelClass.i
+
+# target to preprocess a source file
+src/modelClass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_app.dir/build.make CMakeFiles/opengl_app.dir/src/modelClass.cpp.i
+.PHONY : src/modelClass.cpp.i
+
+src/modelClass.s: src/modelClass.cpp.s
+.PHONY : src/modelClass.s
+
+# target to generate assembly for a file
+src/modelClass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_app.dir/build.make CMakeFiles/opengl_app.dir/src/modelClass.cpp.s
+.PHONY : src/modelClass.cpp.s
+
 src/shaderClass.o: src/shaderClass.cpp.o
 .PHONY : src/shaderClass.o
 
@@ -586,6 +634,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/meshClass.o"
+	@echo "... src/meshClass.i"
+	@echo "... src/meshClass.s"
+	@echo "... src/modelClass.o"
+	@echo "... src/modelClass.i"
+	@echo "... src/modelClass.s"
 	@echo "... src/shaderClass.o"
 	@echo "... src/shaderClass.i"
 	@echo "... src/shaderClass.s"
